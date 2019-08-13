@@ -44,10 +44,15 @@ class TrackList: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Title", for: indexPath)
 
         cell.imageView?.image = UIImage(named: imageNameArray[indexPath.row])
+        cell.textLabel?.text = imageNameArray[indexPath.row]
+        cell.textLabel?.numberOfLines = 0
 
         return cell
     }
 
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 60
+    }
 
     /*
     // Override to support conditional editing of the table view.

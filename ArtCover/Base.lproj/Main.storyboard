@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -25,6 +26,9 @@
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="drb-ip-ZWs" kind="show" identifier="showDetail" id="mRa-h0-dJO"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -36,6 +40,45 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9g6-CG-68u" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="110" y="146"/>
+        </scene>
+        <!--DetailVC-->
+        <scene sceneID="cta-ic-AmL">
+            <objects>
+                <viewController id="drb-ip-ZWs" customClass="DetailVC" customModule="ArtCover" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="tUn-hf-AX5" customClass="De">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Ocy-Zh-0Sf">
+                                <rect key="frame" x="0.0" y="20" width="375" height="372"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F8z-Gc-M09">
+                                <rect key="frame" x="0.0" y="416" width="375" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Ocy-Zh-0Sf" firstAttribute="leading" secondItem="LXi-36-5TT" secondAttribute="leading" id="EbY-iq-BII"/>
+                            <constraint firstItem="F8z-Gc-M09" firstAttribute="top" secondItem="Ocy-Zh-0Sf" secondAttribute="bottom" constant="24" id="KQB-dK-ANa"/>
+                            <constraint firstItem="LXi-36-5TT" firstAttribute="bottom" secondItem="F8z-Gc-M09" secondAttribute="bottom" constant="230" id="N9W-Tc-Vc7"/>
+                            <constraint firstItem="Ocy-Zh-0Sf" firstAttribute="top" secondItem="LXi-36-5TT" secondAttribute="top" id="ZgJ-Qg-c1v"/>
+                            <constraint firstItem="Ocy-Zh-0Sf" firstAttribute="trailing" secondItem="LXi-36-5TT" secondAttribute="trailing" id="kG5-2J-hIH"/>
+                            <constraint firstItem="F8z-Gc-M09" firstAttribute="trailing" secondItem="LXi-36-5TT" secondAttribute="trailing" id="pOn-iH-9T2"/>
+                            <constraint firstItem="F8z-Gc-M09" firstAttribute="leading" secondItem="LXi-36-5TT" secondAttribute="leading" id="uRs-R8-8AS"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="LXi-36-5TT"/>
+                    </view>
+                    <connections>
+                        <outlet property="image" destination="Ocy-Zh-0Sf" id="Shp-fz-yIa"/>
+                        <outlet property="titleLabel" destination="F8z-Gc-M09" id="BWT-Hv-2rE"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jVb-pf-3oX" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="869.60000000000002" y="142.57871064467767"/>
         </scene>
     </scenes>
 </document>
